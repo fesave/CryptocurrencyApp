@@ -1,4 +1,4 @@
-package machucapps.com.cryptocurrencyapp.ui.theme
+package machucapps.com.cryptocurrencyapp.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

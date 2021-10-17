@@ -1,4 +1,4 @@
-package machucapps.com.cryptocurrencyapp
+package machucapps.com.cryptocurrencyapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import machucapps.com.cryptocurrencyapp.ui.theme.CryptocurrencyAppTheme
+import machucapps.com.cryptocurrencyapp.presentation.ui.theme.CryptocurrencyAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

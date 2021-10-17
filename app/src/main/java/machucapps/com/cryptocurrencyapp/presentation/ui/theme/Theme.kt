@@ -1,4 +1,4 @@
-package machucapps.com.cryptocurrencyapp.ui.theme
+package machucapps.com.cryptocurrencyapp.presentation.ui.theme
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
