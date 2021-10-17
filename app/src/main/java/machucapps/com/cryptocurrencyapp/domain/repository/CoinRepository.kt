@@ -1,10 +1,12 @@
 package machucapps.com.cryptocurrencyapp.domain.repository
 
-import machucapps.com.cryptocurrencyapp.data.remote.dto.CoinDetailDto
-import machucapps.com.cryptocurrencyapp.data.remote.dto.CoinDto
+import kotlinx.coroutines.flow.Flow
+import machucapps.com.cryptocurrencyapp.common.Resource
+import machucapps.com.cryptocurrencyapp.domain.model.Coin
+import machucapps.com.cryptocurrencyapp.domain.model.CoinDetail
 
 interface CoinRepository {
 
-    suspend fun getCoins(): List<CoinDto>
-    suspend fun getCoinById(coinId: String): CoinDetailDto
+    suspend fun getCoins(): Flow<Resource<List<Coin>>>
+    suspend fun getCoinById(coinId: String): Flow<Resource<CoinDetail>>
 }
