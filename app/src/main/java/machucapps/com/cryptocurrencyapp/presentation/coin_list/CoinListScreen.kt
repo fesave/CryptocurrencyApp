@@ -2,6 +2,7 @@ package machucapps.com.cryptocurrencyapp.presentation.coin_list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -31,23 +32,23 @@ fun CoinListScreen(
                     coin = coin,
                     onItemClick = {
                         navController.navigate(Screen.CoinDetailScreen.route + "/${coin.id}")
-                    })
+                    }
+                )
             }
         }
-        if (state.error.isNotBlank()) {
+        if(state.error.isNotBlank()) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .padding(horizontal = 20.dp)
                     .align(Alignment.Center)
             )
         }
-        if (state.isLoading) {
+        if(state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
     }
-
 }
