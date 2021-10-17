@@ -5,6 +5,7 @@ How to Make a Clean Architecture Cryptocurrency App with:
 - [X] Clean Architecture
 - [X] Use Cases
 - [X] Jetpack Compose
+- [X] Dependency Injection with Dagger Hilt
 - [X] Using Coinpaprika API
 
 
