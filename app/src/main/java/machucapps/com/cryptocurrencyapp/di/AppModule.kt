@@ -1,0 +1,37 @@
+package machucapps.com.cryptocurrencyapp.di
+
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import machucapps.com.cryptocurrencyapp.common.Constants
+import machucapps.com.cryptocurrencyapp.data.remote.CoinPaprikaApi
+import machucapps.com.cryptocurrencyapp.data.repository.CoinRepositoryImpl
+import machucapps.com.cryptocurrencyapp.domain.repository.CoinRepository
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
+
+    @Provides
+    @Singleton
+    fun providePaprikaApi(): CoinPaprikaApi {
+        return Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(CoinPaprikaApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoinRepository(api: CoinPaprikaApi): CoinRepository {
+        return CoinRepositoryImpl(api = api)
+    }
+
+
+
+}
