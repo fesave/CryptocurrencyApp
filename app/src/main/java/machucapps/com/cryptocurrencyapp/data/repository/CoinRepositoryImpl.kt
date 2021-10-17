@@ -17,7 +17,7 @@ class CoinRepositoryImpl @Inject constructor(
     private val api: CoinPaprikaApi
 ) : CoinRepository {
 
-    override suspend fun getCoins(): Flow<Resource<List<Coin>>> = flow {
+    override fun getCoins(): Flow<Resource<List<Coin>>> = flow {
         try {
             emit(Resource.Loading())
             val coins = api.getCoins().map { it.toCoin() }
@@ -29,7 +29,7 @@ class CoinRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getCoinById(coinId: String): Flow<Resource<CoinDetail>> = flow {
+    override fun getCoinById(coinId: String): Flow<Resource<CoinDetail>> = flow {
         try {
             emit(Resource.Loading())
             val coin = api.getCoinById(coinId = coinId).toCoinDetail()
